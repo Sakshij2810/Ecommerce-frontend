@@ -28,13 +28,18 @@ const ConfirmOrder = ({ history }) => {
     // try {
     const {
       data: { key },
-    } = await axios.get("http://localhost:4000/api/v1/getkey");
+    } = await axios.get(
+      "https://puce-mysterious-magpie.cyclic.app/api/v1/getkey"
+    );
 
     const {
       data: { order },
-    } = await axios.post("http://localhost:4000/api/v1/checkout", {
-      amount,
-    });
+    } = await axios.post(
+      "https://puce-mysterious-magpie.cyclic.app/api/v1/checkout",
+      {
+        amount,
+      }
+    );
 
     const options = {
       key, // Enter the Key ID generated from the Dashboard
@@ -45,7 +50,8 @@ const ConfirmOrder = ({ history }) => {
       image:
         "https://static.vecteezy.com/system/resources/previews/016/471/452/original/abstract-modern-ecommerce-logo-ecommerce-logo-design-shop-logo-design-template-creative-ecommerce-logo-vector.jpg",
       order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-      callback_url: "http://localhost:4000/api/v1/paymentverification",
+      callback_url:
+        "https://puce-mysterious-magpie.cyclic.app/api/v1/paymentverification",
 
       //add login user details
       prefill: {
