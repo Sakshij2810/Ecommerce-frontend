@@ -1,0 +1,280 @@
+.productsHeading {
+  margin: 2vmax auto;
+  width: 15vw;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+  padding: 2vmax;
+  color: rgba(0, 0, 0, 0.678);
+  font: 500 1.5vmax "Roboto";
+  text-align: center;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 5vmax;
+  margin: 2vmax auto;
+  width: 80vw;
+  justify-content: center;
+  min-height: 30vh;
+}
+
+/* pagination */
+.paginationBox {
+  display: flex;
+  justify-content: center;
+  margin: 6vmax;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+.page-item {
+  background-color: rgb(255, 255, 255);
+  list-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.178);
+  padding: 1vmax 1.5vmax;
+  transition: all 0.5sec;
+  cursor: pointer;
+}
+.page-item:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.page-item:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.page-link {
+  text-decoration: none;
+  font: 300 0.7vmax "Roboto";
+  color: rgb(80, 80, 80);
+  transition: all 0.3s;
+}
+.page-item:hover {
+  background-color: rgb(230, 230, 230);
+}
+.page-item:hover .page-link {
+  color: rgb(0, 0, 0);
+}
+
+.pageItemActive {
+  background-color: tomato;
+
+  list-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.178);
+  padding: 1vmax 1.5vmax;
+  transition: all 0.5sec;
+  cursor: pointer;
+}
+.pageLinkActive {
+  color: white;
+  text-decoration: none;
+  font: 300 0.7vmax "Roboto";
+
+  transition: all 0.3s;
+}
+.pagination-disabled {
+  opacity: 0;
+}
+
+/* filter */
+
+/* Adding styles for the price range filter */
+.box {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  max-width: 150px;
+
+  background: #fff;
+  position: absolute;
+  top: 10vmax;
+  left: 4vmax;
+}
+.box h3 {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+  color: #3f4656;
+}
+
+.values {
+  font: 400 0.8vmax "Roboto";
+  color: rgba(0, 0, 0, 0.61);
+}
+.values:hover {
+  color: tomato;
+}
+
+.slider {
+  width: 100%;
+  height: 2px;
+  background-color: #cdd9ed;
+  margin-top: 30px;
+}
+.slider .thumb {
+  width: 13px;
+  height: 13px;
+  cursor: grab;
+  background: rgb(55, 97, 214);
+  border-radius: 50%;
+  border: 2px solid rgb(55, 97, 214);
+  top: -7px;
+}
+.track-1 {
+  background-color: rgb(55, 97, 214);
+}
+
+/* category css */
+.category {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  max-width: 150px;
+
+  background: #fff;
+  position: absolute;
+  top: 17vmax;
+  left: 4vmax;
+}
+.category h3 {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+  color: #3f4656;
+}
+
+.categoryBox {
+  padding: 0%;
+}
+
+.category-link {
+  list-style: none;
+  color: rgba(0, 0, 0, 0.61);
+  font: 400 0.8vmax "Roboto";
+  margin: 0.4vmax;
+  cursor: pointer;
+  transition: all 0.5sec;
+}
+.category-link:hover {
+  color: tomato;
+}
+/* ratings css */
+.ratingBox > fieldset {
+  border: 1px solid rgba(0, 0, 0, 0.61);
+}
+.ratingBox {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  max-width: 150px;
+  margin-bottom: 40px;
+  background: #fff;
+  position: absolute;
+  top: 30vmax;
+  left: 4vmax;
+}
+/* For screens smaller than 768px (tablets) */
+@media screen and (max-width: 768px) {
+  .productsHeading {
+    font-size: 1.8rem;
+    width: auto;
+  }
+
+  .products {
+    width: 90%;
+  }
+  .page-link {
+    font: 300 1.7vmax "Roboto";
+  }
+  .pageLinkActive {
+    font: 300 1.7vmax "Roboto";
+  }
+
+  .box {
+    position: relative;
+    top: 0;
+    margin-left: 180px;
+    max-width: 280px;
+    padding: 24px 20px;
+  }
+  .box h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    color: #3f4656;
+  }
+  .values,
+  .category-link {
+    font-size: 1.8vmax;
+  }
+  .category {
+    position: relative;
+    top: 0;
+    margin-left: 180px;
+    max-width: 280px;
+    padding: 24px 20px;
+  }
+  .category h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    color: #3f4656;
+  }
+  .ratingBox {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 40px;
+
+    position: relative;
+    top: 0;
+    margin-left: 200px;
+  }
+}
+
+/* For screens smaller than 576px (phones) */
+@media screen and (max-width: 576px) {
+  .productsHeading {
+    font-size: 1.5rem; /* Adjust font size as needed */
+  }
+
+  .products {
+    width: 100%; /* Adjust width as needed */
+  }
+
+  .box {
+    position: relative;
+    top: 0;
+    margin-left: 60px;
+    max-width: 240px; /* Adjust max-width as needed */
+    padding: 20px 16px; /* Adjust padding as needed */
+  }
+  .box h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    color: #3f4656;
+  }
+  .values,
+  .category-link {
+    font-size: 1.8vmax;
+  }
+  .category {
+    position: relative;
+    top: 0;
+    margin-left: 60px;
+    max-width: 280px;
+    padding: 24px 20px;
+  }
+  .category h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    color: #3f4656;
+  }
+  .ratingBox {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 40px;
+
+    position: relative;
+    top: 0;
+    margin-left: 80px;
+  }
+}
