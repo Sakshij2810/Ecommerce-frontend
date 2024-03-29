@@ -96,7 +96,11 @@ export const newReview = (reviewData) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
 
-    const { data } = await axios.put(`/api/v1/review`, reviewData, config);
+    const { data } = await axios.put(
+      `https://puce-mysterious-magpie.cyclic.app/api/v1/review`,
+      reviewData,
+      config
+    );
 
     dispatch({
       type: NEW_REVIEW_SUCCESS,
@@ -115,7 +119,9 @@ export const getAdminProduct = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_PRODUCT_REQUEST });
 
-    const { data } = await axios.get("/api/v1/admin/products");
+    const { data } = await axios.get(
+      "https://puce-mysterious-magpie.cyclic.app/api/v1/admin/products"
+    );
 
     dispatch({
       type: ADMIN_PRODUCT_SUCCESS,
@@ -135,7 +141,7 @@ export const createProduct = (productData) => async (dispatch) => {
     dispatch({ type: NEW_PRODUCT_REQUEST });
 
     const { data } = await axios.post(
-      `/api/v1/admin/product/new`,
+      `https://puce-mysterious-magpie.cyclic.app/api/v1/admin/product/new`,
       productData // Assuming productData is a FormData object containing images
     );
 

@@ -84,7 +84,9 @@ export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_USER_REQUEST });
 
-    const { data } = await axios.get("/api/v1/me");
+    const { data } = await axios.get(
+      "https://puce-mysterious-magpie.cyclic.app/api/v1/me"
+    );
 
     dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
   } catch (error) {
@@ -107,9 +109,13 @@ export const updateProfile = (userData) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_PROFILE_REQUEST });
 
-    // const config = { headers: { "Content-Type": "multipart/form-data" } };
+    const config = { headers: { "Content-Type": "multipart/form-data" } };
 
-    const { data } = await axios.put(`/api/v1/me/update`, userData);
+    const { data } = await axios.put(
+      `https://puce-mysterious-magpie.cyclic.app/api/v1/me/update`,
+      userData,
+      config
+    );
 
     dispatch({ type: UPDATE_PROFILE_SUCCESS, payload: data.success });
   } catch (error) {
@@ -128,7 +134,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
     const config = { headers: { "Content-Type": "application/json" } };
 
     const { data } = await axios.put(
-      `/api/v1/password/update`,
+      `https://puce-mysterious-magpie.cyclic.app/api/v1/password/update`,
       passwords,
       config
     );
@@ -191,7 +197,9 @@ export const getAllUsers = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_USERS_REQUEST });
 
-    const { data } = await axios.get(`/api/v1/admin/users`);
+    const { data } = await axios.get(
+      `https://puce-mysterious-magpie.cyclic.app/api/v1/admin/users`
+    );
 
     dispatch({ type: ALL_USERS_SUCCESS, payload: data.users });
   } catch (error) {
@@ -203,7 +211,9 @@ export const getAllUsers = () => async (dispatch) => {
 export const getUserDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: USER_DETAILS_REQUEST });
-    const { data } = await axios.get(`/api/v1/admin/user/${id}`);
+    const { data } = await axios.get(
+      `https://puce-mysterious-magpie.cyclic.app/api/v1/admin/user/${id}`
+    );
 
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data.user });
   } catch (error) {
@@ -219,7 +229,7 @@ export const updateUser = (id, userData) => async (dispatch) => {
     // const config = { headers: { "Content-Type": "application/json" } };
 
     const { data } = await axios.put(
-      `/api/v1/admin/user/${id}`,
+      `https://puce-mysterious-magpie.cyclic.app/api/v1/admin/user/${id}`,
       userData
       // config
     );
